@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 91%;
+    --foreground: 225 43% 21%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 43% 21%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 43% 21%;
+
+    --primary: 225 43% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 91%;
+    --secondary-foreground: 225 43% 21%;
+
+    --muted: 0 0% 91%;
+    --muted-foreground: 225 43% 30%;
+
+    --accent: 0 0% 91%;
+    --accent-foreground: 225 43% 21%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 225 43% 21%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 15 73% 47%;
+    --chart-2: 225 43% 21%;
+    --chart-3: 225 36% 20%;
+    --chart-4: 0 0% 91%;
+    --chart-5: 15 73% 47%;
+
+    --tech-withe: 0 0% 91%;
+    --tech-blue: 225 43% 21%;
+    --tech-cyan: 15 73% 47%;
+    --tech-purple: 225 36% 20%;
+    --tech-indigo: 225 43% 21%;
+    --tech-pink: 15 73% 47%;
+  }
+
+  .dark {
+    --background: 225 36% 20%;
+    --foreground: 0 0% 91%;
+
+    --card: 225 43% 21%;
+    --card-foreground: 0 0% 91%;
+
+    --popover: 225 43% 21%;
+    --popover-foreground: 0 0% 91%;
+
+    --primary: 0 0% 91%;
+    --primary-foreground: 225 43% 21%;
+
+    --secondary: 225 43% 21%;
+    --secondary-foreground: 0 0% 91%;
+
+    --muted: 225 43% 21%;
+    --muted-foreground: 0 0% 81%;
+
+    --accent: 225 43% 21%;
+    --accent-foreground: 0 0% 91%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 91%;
+
+    --border: 225 43% 25%;
+    --input: 225 43% 25%;
+    --ring: 0 0% 81%;
+
+    --chart-1: 15 73% 47%;
+    --chart-2: 225 43% 35%;
+    --chart-3: 225 36% 30%;
+    --chart-4: 0 0% 91%;
+    --chart-5: 15 73% 47%;
+
+    --tech-withe: 0 0% 91%;
+    --tech-blue: 225 43% 35%;
+    --tech-cyan: 15 73% 47%;
+    --tech-purple: 225 36% 30%;
+    --tech-indigo: 225 43% 35%;
+    --tech-pink: 15 73% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat font-bold tracking-tight;
+  }
+  p,
+  li,
+  a,
+  button,
+  span {
+    @apply font-inter;
+  }
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.mask-gradient-r {
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: float 6s ease-in-out 1s infinite;
+}
+
+.animate-float-delay-2 {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-float-delay-3 {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
